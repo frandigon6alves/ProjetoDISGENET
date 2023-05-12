@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>client application</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="index.js"></script>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+
+    <!-- JavaScript Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <img src="./img/logo_disgenet_plus.png" alt="logo" />
+      <nav class="navbar-expand-lg">
+        <button
+          class="navbar-toggler border-1"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+          <ul class="nav justify-content-end ml-auto">
+            <li class="nav-item">
+              <a class="nav-link black-link" href="https://www.disgenetplus.com/">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link black-link" href="https://www.disgenetplus.com/new-search">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link black-link" href="https://www.disgenetplus.com/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link black-link" href="https://www.disgenetplus.com/DbInfo"> Summary</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main class="d-flex flex-column">
+      <div class="divsubmit">
+        <form class="border rounded-3" style="background-color: #ffffff" onsubmit="searchVariants(event)">
+          <div class="mb-3">
+            <label for="GeneHGNCsymbol" class="form-label">Gene HGNC symbol:</label>
+            <input type="text" class="form-control geneHGNC-input" id="GeneHGNCsymbol" required />
+            <p class="number-of-variants"></p>
+            <button type="submit" class="btn btn-light rounded-5">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="mt-3 table-responsive my-5">
+        <table id="table-of-variants" class="table table-bordered">
+          <thead id="sticky-header">
+            <tr>
+              <th>Symbol of Gene</th>
+              <th>Number of Variants</th>
+            </tr>
+          </thead>
+          <tbody class="table-body-of-variants"></tbody>
+        </table>
+      </div>
+
+      <div class="divsubmit">
+        <form class="border rounded-3" style="background-color: #ffffff" onsubmit="searchAssociations(event)">
+          <div class="mb-3">
+            <label for="disease_id" class="form-label">Disease ID:</label>
+            <select name="disease_prefix" id="disease_prefix">
+              <option value="UMLS">UMLS</option>
+              <option value="ICD9CM">ICD9CM</option>
+              <option value="ICD10">ICD10</option>
+              <option value="MESH">MESH</option>
+              <option value="OMIM">OMIM</option>
+              <option value="DO">DO</option>
+              <option value="EFO">EFO</option>
+              <option value="NCI">NCI</option>
+              <option value="HPO">HPO</option>
+              <option value="MONDO">MONDO</option>
+              <option value="ORDO">ORDO</option>
+            </select>
+            <input type="text" class="form-control" id="disease_id" name="disease_id" required />
+
+            <button type="submit" class="btn btn-light rounded-5">Submit</button>
+          </div>
+        </form>
+      </div>
+      <div class="mt-3 table-responsive my-5">
+        <table id="associations-table" class="table table-bordered">
+          <thead id="sticky-header">
+            <tr>
+              <th>Symbol of Gene</th>
+              <th>Score</th>
+              <th>Year Initial</th>
+              <th>Year Final</th>
+            </tr>
+          </thead>
+          <tbody class="table-disease"></tbody>
+        </table>
+      </div>
+    </main>
+    <footer class="bg-dark py-3">
+      <div class="container text-center">
+        <p class="m-0">&copy; 2023 by Franciellen Gonçalves</p>
+      </div>
+    </footer>
+  </body>
+</html>

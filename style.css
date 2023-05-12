@@ -1,0 +1,76 @@
+body {
+  height: 100vh;
+  margin: 0;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+img {
+  margin-right: 10px;
+  width: 150px;
+  height: auto;
+}
+
+main,
+.divsubmit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  padding: 10px;
+  margin: 0 auto;
+}
+
+.number-of-variants {
+  padding-bottom: 10px;
+}
+
+form {
+  width: 50%;
+  padding: 20px;
+  background-image: url("./img/dna-adn.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.form-label {
+  margin-top: 0.5rem;
+}
+
+.btn {
+  margin-top: 10px;
+}
+
+.black-link {
+  color: black !important;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+table {
+  font-size: 12px;
+}
+
+footer {
+  background-image: url("./img/dna-adn.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Styles for screens smaller than 768 pixels */
+@media (max-width: 768px) {
+  form {
+    width: 100%;
+    font-size: 16px;
+  }
+}
